@@ -21,6 +21,13 @@
 		716E56CA2D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56C32D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift */; };
 		716E56CD2D78DC7E00F27CA4 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56C62D78DC7E00F27CA4 /* UIStackViewExtension.swift */; };
 		716E56D02D78DC9A00F27CA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56CF2D78DC9A00F27CA4 /* LoginViewController.swift */; };
+		716E56D22D78DE8000F27CA4 /* TipeDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56D12D78DE8000F27CA4 /* TipeDataExtension.swift */; };
+		716E56D42D78DE8800F27CA4 /* IconAndTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56D32D78DE8800F27CA4 /* IconAndTextView.swift */; };
+		716E56D62D78DEA100F27CA4 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56D52D78DEA100F27CA4 /* WeatherViewController.swift */; };
+		716E56D82D78DF0300F27CA4 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56D72D78DF0300F27CA4 /* WeatherPresenter.swift */; };
+		716E56DF2D78DFF300F27CA4 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56D92D78DFF200F27CA4 /* HourlyForecastCell.swift */; };
+		716E56E02D78DFF300F27CA4 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56DA2D78DFF200F27CA4 /* HourlyForecastView.swift */; };
+		716E56E12D78DFF300F27CA4 /* HumidityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56DC2D78DFF200F27CA4 /* HumidityInfoView.swift */; };
 		7178F0472D787B640044E3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178F0462D787B640044E3CC /* AppDelegate.swift */; };
 		7178F0492D787B640044E3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178F0482D787B640044E3CC /* SceneDelegate.swift */; };
 		7178F04B2D787B640044E3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178F04A2D787B640044E3CC /* ViewController.swift */; };
@@ -37,6 +44,13 @@
 		716E56C32D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		716E56C62D78DC7E00F27CA4 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 		716E56CF2D78DC9A00F27CA4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		716E56D12D78DE8000F27CA4 /* TipeDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipeDataExtension.swift; sourceTree = "<group>"; };
+		716E56D32D78DE8800F27CA4 /* IconAndTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconAndTextView.swift; sourceTree = "<group>"; };
+		716E56D52D78DEA100F27CA4 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		716E56D72D78DF0300F27CA4 /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
+		716E56D92D78DFF200F27CA4 /* HourlyForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastCell.swift; sourceTree = "<group>"; };
+		716E56DA2D78DFF200F27CA4 /* HourlyForecastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
+		716E56DC2D78DFF200F27CA4 /* HumidityInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumidityInfoView.swift; sourceTree = "<group>"; };
 		7178F0432D787B640044E3CC /* openweatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openweatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7178F0462D787B640044E3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7178F0482D787B640044E3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +124,9 @@
 		716E56BF2D78DBDC00F27CA4 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				716E56DE2D78DFF200F27CA4 /* Views */,
+				716E56D52D78DEA100F27CA4 /* WeatherViewController.swift */,
+				716E56D72D78DF0300F27CA4 /* WeatherPresenter.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -135,8 +152,36 @@
 			children = (
 				716E56C32D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift */,
 				716E56C62D78DC7E00F27CA4 /* UIStackViewExtension.swift */,
+				716E56D12D78DE8000F27CA4 /* TipeDataExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		716E56DB2D78DFF200F27CA4 /* Hourly Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				716E56D92D78DFF200F27CA4 /* HourlyForecastCell.swift */,
+				716E56DA2D78DFF200F27CA4 /* HourlyForecastView.swift */,
+			);
+			path = "Hourly Forecast";
+			sourceTree = "<group>";
+		};
+		716E56DD2D78DFF200F27CA4 /* Humidity */ = {
+			isa = PBXGroup;
+			children = (
+				716E56D32D78DE8800F27CA4 /* IconAndTextView.swift */,
+				716E56DC2D78DFF200F27CA4 /* HumidityInfoView.swift */,
+			);
+			path = Humidity;
+			sourceTree = "<group>";
+		};
+		716E56DE2D78DFF200F27CA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				716E56DB2D78DFF200F27CA4 /* Hourly Forecast */,
+				716E56DD2D78DFF200F27CA4 /* Humidity */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7178F03A2D787B640044E3CC = {
@@ -258,16 +303,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				716E56D02D78DC9A00F27CA4 /* LoginViewController.swift in Sources */,
+				716E56E02D78DFF300F27CA4 /* HourlyForecastView.swift in Sources */,
 				7178F04B2D787B640044E3CC /* ViewController.swift in Sources */,
 				716E56CD2D78DC7E00F27CA4 /* UIStackViewExtension.swift in Sources */,
 				716E56B32D78D78100F27CA4 /* WeatherApi.swift in Sources */,
 				716E56B42D78D78100F27CA4 /* APIManager.swift in Sources */,
 				7178F0472D787B640044E3CC /* AppDelegate.swift in Sources */,
+				716E56E12D78DFF300F27CA4 /* HumidityInfoView.swift in Sources */,
 				716E56B82D78D79E00F27CA4 /* Forecast.swift in Sources */,
 				7178F0492D787B640044E3CC /* SceneDelegate.swift in Sources */,
 				716E56CA2D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift in Sources */,
+				716E56D42D78DE8800F27CA4 /* IconAndTextView.swift in Sources */,
+				716E56D82D78DF0300F27CA4 /* WeatherPresenter.swift in Sources */,
 				716E56B92D78D79E00F27CA4 /* Weather.swift in Sources */,
+				716E56D62D78DEA100F27CA4 /* WeatherViewController.swift in Sources */,
+				716E56DF2D78DFF300F27CA4 /* HourlyForecastCell.swift in Sources */,
 				716E56C92D78DC7E00F27CA4 /* UserPreferenceManager.swift in Sources */,
+				716E56D22D78DE8000F27CA4 /* TipeDataExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

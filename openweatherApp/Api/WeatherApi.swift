@@ -13,7 +13,7 @@ struct WeatherApi {
         return APIManager.shared.request(
             path: "/weather",
             method: .get,
-            parameters: ["lat": lat, "lon": lon, "appid" : "afeaeb26448e381c057a46a73f9a8a32"]
+            parameters: ["units": "metric","lat": lat, "lon": lon, "appid" : "afeaeb26448e381c057a46a73f9a8a32"]
         )
     }
     

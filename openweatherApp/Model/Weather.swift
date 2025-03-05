@@ -12,6 +12,7 @@ struct WeatherResponse: Decodable {
     let weather: [Weather]?
     let wind: Wind?
     let clouds: Clouds?
+    let name: String?
 }
 
 struct Weather: Decodable {

@@ -138,7 +138,7 @@ class LoginViewController: UIViewController {
             }
             
             window.rootViewController?.dismiss(animated: false, completion: nil)
-            window.rootViewController = ViewController()
+            window.rootViewController = WeatherViewController()
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
             MBProgressHUD.hide(for: self.view, animated: true)
 
