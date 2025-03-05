@@ -1,23 +1,22 @@
 //
-//  LoginViewController.swift
-//  openweather
+//  ProfileViewController.swift
+//  openweatherApp
 //
 //  Created by Gerry on 05/03/25.
 //
 
 import UIKit
+import XLPagerTabStrip
 import RxSwift
 import RxCocoa
-import MBProgressHUD
-import CoreLocation
 
-class LoginViewController: UIViewController {
+class ProfileViewController: UIViewController, IndicatorInfoProvider {
     
-    // username : username123
-    // password : password123
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(image: UIImage(systemName: "person.fill"))
+    }
     
     private let disposeBag = DisposeBag()
-    private let locationManager = CLLocationManager()
     
     private lazy var containerView: UIStackView = {
         let view = UIStackView()
@@ -72,7 +71,7 @@ class LoginViewController: UIViewController {
         var config = UIButton.Configuration.filled()
         config.baseBackgroundColor = .systemBlue
         let button = UIButton(configuration: config)
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Edit", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(editTapped), for: .touchUpInside)
         button.backgroundColor = .lightGray
@@ -85,14 +84,26 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var logoutButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle("Logout", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(logoutTapped), for: .touchUpInside)
+        button.backgroundColor = .white
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemGray5
-        locationManager.requestWhenInUseAuthorization()
         
         self.view.addSubview(containerView)
-        containerView.addArrangedSubViews(views: [imageViewIcon,usernameTextField,passwordTextField,editButton])
+        containerView.addArrangedSubViews(views: [imageViewIcon,usernameTextField,passwordTextField,editButton,logoutButton])
         setupConstraint()
     }
     
@@ -121,31 +132,38 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        if UserPreferenceManager.shared.username == username && UserPreferenceManager.shared.password == password {
-            loginSuccess()
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Username atau Password Salah", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true)
-        }
+        editSuccess(username: username, password: password)
+
     }
     
-    private func loginSuccess() {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.label.text = "Loading..."
-        hud.isUserInteractionEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                  let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
-                return
-            }
-            
-            window.rootViewController?.dismiss(animated: false, completion: nil)
-            window.rootViewController = HomeViewController()
-            UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
-            MBProgressHUD.hide(for: self.view, animated: true)
-
+    @objc func logoutTapped() {
+        logout()
+    }
+    
+    private func editSuccess(username: String, password: String) {
+        usernameTextField.text = nil
+        passwordTextField.text = nil
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+        UserPreferenceManager.shared.username = username
+        UserPreferenceManager.shared.password = password
+        
+        setState()
+        
+        let alert = UIAlertController(title: "Success", message: "Edit Profile Berhasil", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
+    }
+    
+    private func logout() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
+            return
         }
         
+        window.rootViewController?.dismiss(animated: false, completion: nil)
+        window.rootViewController = LoginViewController()
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
 }

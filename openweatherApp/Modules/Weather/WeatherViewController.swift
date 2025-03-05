@@ -12,7 +12,11 @@ import XLPagerTabStrip
 import CoreLocation
 import MBProgressHUD
 
-class WeatherViewController: UIViewController{
+class WeatherViewController: UIViewController, IndicatorInfoProvider {
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(image: UIImage(systemName: "cloud.sun.fill"))
+    }
     
     private let locationManager = CLLocationManager()
     
