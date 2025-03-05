@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  openweatherApp
 //
-//  Created by Suitmedia on 05/03/25.
+//  Created by Gerry on 05/03/25.
 //
 
 import UIKit
@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .red
     }
 
 
