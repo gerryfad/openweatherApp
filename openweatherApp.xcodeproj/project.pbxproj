@@ -17,6 +17,10 @@
 		716E56B42D78D78100F27CA4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56B22D78D78100F27CA4 /* APIManager.swift */; };
 		716E56B82D78D79E00F27CA4 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56B52D78D79E00F27CA4 /* Forecast.swift */; };
 		716E56B92D78D79E00F27CA4 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56B62D78D79E00F27CA4 /* Weather.swift */; };
+		716E56C92D78DC7E00F27CA4 /* UserPreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56C22D78DC7D00F27CA4 /* UserPreferenceManager.swift */; };
+		716E56CA2D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56C32D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift */; };
+		716E56CD2D78DC7E00F27CA4 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56C62D78DC7E00F27CA4 /* UIStackViewExtension.swift */; };
+		716E56D02D78DC9A00F27CA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716E56CF2D78DC9A00F27CA4 /* LoginViewController.swift */; };
 		7178F0472D787B640044E3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178F0462D787B640044E3CC /* AppDelegate.swift */; };
 		7178F0492D787B640044E3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178F0482D787B640044E3CC /* SceneDelegate.swift */; };
 		7178F04B2D787B640044E3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7178F04A2D787B640044E3CC /* ViewController.swift */; };
@@ -29,6 +33,10 @@
 		716E56B22D78D78100F27CA4 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		716E56B52D78D79E00F27CA4 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		716E56B62D78D79E00F27CA4 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		716E56C22D78DC7D00F27CA4 /* UserPreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPreferenceManager.swift; sourceTree = "<group>"; };
+		716E56C32D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
+		716E56C62D78DC7E00F27CA4 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		716E56CF2D78DC9A00F27CA4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7178F0432D787B640044E3CC /* openweatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openweatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7178F0462D787B640044E3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7178F0482D787B640044E3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +81,64 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		716E56BC2D78DBC000F27CA4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				716E56C02D78DBE200F27CA4 /* Profile */,
+				716E56BF2D78DBDC00F27CA4 /* Weather */,
+				716E56BE2D78DBD500F27CA4 /* Login */,
+				716E56BD2D78DBCE00F27CA4 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		716E56BD2D78DBCE00F27CA4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		716E56BE2D78DBD500F27CA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				716E56CF2D78DC9A00F27CA4 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		716E56BF2D78DBDC00F27CA4 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		716E56C02D78DBE200F27CA4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		716E56C12D78DC6300F27CA4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				716E56C82D78DC7E00F27CA4 /* Extension */,
+				716E56C22D78DC7D00F27CA4 /* UserPreferenceManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		716E56C82D78DC7E00F27CA4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				716E56C32D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift */,
+				716E56C62D78DC7E00F27CA4 /* UIStackViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7178F03A2D787B640044E3CC = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +160,8 @@
 			children = (
 				716E56B02D78D76700F27CA4 /* Api */,
 				716E56B72D78D79E00F27CA4 /* Model */,
+				716E56BC2D78DBC000F27CA4 /* Modules */,
+				716E56C12D78DC6300F27CA4 /* Utilities */,
 				7178F0462D787B640044E3CC /* AppDelegate.swift */,
 				7178F0482D787B640044E3CC /* SceneDelegate.swift */,
 				7178F04A2D787B640044E3CC /* ViewController.swift */,
@@ -189,13 +257,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716E56D02D78DC9A00F27CA4 /* LoginViewController.swift in Sources */,
 				7178F04B2D787B640044E3CC /* ViewController.swift in Sources */,
+				716E56CD2D78DC7E00F27CA4 /* UIStackViewExtension.swift in Sources */,
 				716E56B32D78D78100F27CA4 /* WeatherApi.swift in Sources */,
 				716E56B42D78D78100F27CA4 /* APIManager.swift in Sources */,
 				7178F0472D787B640044E3CC /* AppDelegate.swift in Sources */,
 				716E56B82D78D79E00F27CA4 /* Forecast.swift in Sources */,
 				7178F0492D787B640044E3CC /* SceneDelegate.swift in Sources */,
+				716E56CA2D78DC7E00F27CA4 /* NSLayoutConstraintExtensions.swift in Sources */,
 				716E56B92D78D79E00F27CA4 /* Weather.swift in Sources */,
+				716E56C92D78DC7E00F27CA4 /* UserPreferenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
